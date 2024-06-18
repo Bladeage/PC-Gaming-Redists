@@ -21,8 +21,11 @@ ECHO UAC.ShellExecute "!batchPath!", args, "", "runas", 1 >> "%vbsGetPrivileges%
 exit /B
 :gotPrivileges
 setlocal & pushd .
+pause
 cd /d %~dp0
+pause
 if '%1'=='ELEV' (del "%vbsGetPrivileges%" 1>nul 2>nul  &  shift /1)
+pause
 title PC Gaming Redists AIO Installer
 color 1b
 echo =================================
