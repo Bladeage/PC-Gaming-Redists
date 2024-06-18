@@ -4,6 +4,7 @@ color 1b
 echo =================================
 echo  PC Gaming Redists AIO Installer
 echo  By HarryEffinPotter and Skrimix
+echo        Modified by Bladeage
 echo =================================
 echo NET / VC++ / XNA / 7Zip / DirectX
 echo.
@@ -56,7 +57,11 @@ set "str=%%G"
 set "str=!str:*Microsoft.=Microsoft.!"
 for /f "tokens=1 delims= " %%a in ("!str!") do (
 echo %%a | FIND /I "Microsoft.dotnetUninstallTool" 1>nul 2>Nul && (set /a skip=1)
+echo %%a | FIND /I "Microsoft.DotNet.DesktopRuntime" 1>nul 2>Nul && (set /a skip=1)
+echo %%a | FIND /I "Microsoft.DotNet.Runtime" 1>nul 2>Nul && (set /a skip=1)
+echo %%a | FIND /I "Microsoft.DotNet.Asp" 1>nul 2>Nul && (set /a skip=1)
 echo %%a | FIND /I "Microsoft.DotNet.SDK" 1>nul 2>Nul && (set /a skip=1)
+echo %%a | FIND /I "arm" 1>nul 2>Nul && (set /a skip=1)
 echo %%a | FIND /I "Microsoft.DotNet.HostingBundle" 1>nul 2>Nul  && (set /a skip=1)
 echo %%a | FIND /I "Microsoft." 1>nul 2>Nul && ( 
 if "!skip!" == "0" (
@@ -88,13 +93,21 @@ echo.
 Timeout /t 2 /nobreak 1>nul 2>nul
 REM Install some other loose ends.
 echo DirectX
-winget install -e --id Microsoft.DirectX --accept-package-agreements --accept-source-agreements --force --silent 2>nul 1>nul
+winget install -e --id Microsoft.DirectX --accept-package-agreements  --force --silent 2>nul 1>nul
 echo XNA Framework Redistributable
-winget install -e --id Microsoft.XNARedist --accept-package-agreements --accept-source-agreements --force --silent 2>nul 1>nul
+winget install -e --id Microsoft.XNARedist --accept-package-agreements --force --silent 2>nul 1>nul
 echo 7zip
-winget install -e --id 7zip.7zip --accept-package-agreements --accept-source-agreements --force --silent 2>nul 1>nul
+winget install -e --id 7zip.7zip --accept-package-agreements --force --silent 2>nul 1>nul
 echo Powershell
-winget install -e --id Microsoft.PowerShell --accept-package-agreements --accept-source-agreements --force --silent 2>nul 1>nul
+winget install -e --id Microsoft.PowerShell --accept-package-agreements --force --silent 2>nul 1>nul
+echo Terminal (Preview)
+winget install -e --id Microsoft.WindowsTerminal --accept-package-agreements --force --silent 2>nul 1>nul
+echo PowerToys (Preview)
+winget install -e --id Microsoft.PowerToys --accept-package-agreements --force --silent 2>nul 1>nul
+echo Java Runtime 8
+winget install -e --id Oracle.JavaRuntimeEnvironment --accept-package-agreements --force --silent 2>nul 1>nul
+echo Java SE Development Kit 22
+winget install -e --id Oracle.JDK.22 --accept-package-agreements --force --silent 2>nul 1>nul
 Timeout /t 2 /nobreak 1>nul 2>nul
 
 cls

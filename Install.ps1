@@ -34,7 +34,7 @@ if (!(Test-CommandExists winget))
 }
 
 echo "Downloading script..."
-$DownloadURL = 'https://github.com/harryeffinpotter/PC-Gaming-Redists-AIO/raw/main/AIOInstaller.bat'
+$DownloadURL = 'https://github.com/Bladeage/PC-Gaming-Redists-AIO/raw/main/AIOInstaller.bat'
 
 $FilePath = "$env:TEMP\AIOInstaller.bat"
 
