@@ -9,7 +9,7 @@ Instructions
  - **Option 2)** Open a regular **PowerShell** (DON'T RUN AS ADMIN) and run the following one-liner:
  &nbsp; 
 
-    `iwr -useb https://raw.githubusercontent.com/Bladeage/PC-Gaming-Redists/main/Install.ps1`
+    `iwr -useb https://raw.githubusercontent.com/Bladeage/PC-Gaming-Redists/main/Install.ps1 | iex`
 
 
 Troubleshooting:
