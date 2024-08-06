@@ -129,8 +129,6 @@ echo Powershell
 winget install -e --id Microsoft.PowerShell --accept-package-agreements --force --silent 2>nul 1>nul
 echo Terminal (Preview)
 winget install -e --id Microsoft.WindowsTerminal --accept-package-agreements --force --silent 2>nul 1>nul
-echo PowerToys (Preview)
-winget install -e --id Microsoft.PowerToys --accept-package-agreements --force --silent 2>nul 1>nul
 echo Java Runtime 8
 winget install -e --id Oracle.JavaRuntimeEnvironment --accept-package-agreements --force --silent 2>nul 1>nul
 echo Java SE Development Kit 22
